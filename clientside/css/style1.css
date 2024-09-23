@@ -5,7 +5,7 @@
 .navbar{
     width: 100%;
     height: 10vh;
-    background:linear-gradient(45deg,rgb(248, 194, 188),rgb(255, 143, 130),rgb(239, 78, 60),rgb(255, 143, 130),rgb(248, 194, 188)) ;
+    background:linear-gradient(45deg,rgb(146, 250, 146),rgb(130, 255, 147),rgb(66, 239, 60),rgb(130, 255, 130),rgb(188, 248, 194)) ;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -14,7 +14,7 @@
     z-index: 5;
 }
 .navbar h1{
-    color: rgb(66, 3, 3);
+    color: rgb(20, 20, 20);
     margin-left: 1%;
     text-shadow: 1px 1px 0 #e2d6d6,
                         2px 2px 0 #e2d6d6,
@@ -76,6 +76,16 @@
     transition: 0.4s;
     transform: scale(1.1);
 }
+input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+input[type="text"]:focus{
+    outline: none;
+} 
 .contents{
     width: 100%;
     display: flex;
@@ -210,13 +220,4 @@ tr:hover {
     outline: 1px solid rgb(255, 34, 0);
 }
 
-input[type="text"] {
-    width: 100%;
-    padding: 5px;
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-input[type="text"]:focus{
-    outline: none;
-} */
+*/

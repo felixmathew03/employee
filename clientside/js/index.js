@@ -5,16 +5,6 @@ async function getDonors() {
     str=``;
     employees.map((employ)=>{
         str+=`
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            
-        </tr>
         <div class="content">
             <div class="img">
                 <img src="./img/cute-woman-chuckle-holding-breath.jpg" alt="">
