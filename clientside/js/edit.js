@@ -1,7 +1,7 @@
 const url=window.location.href;
 const urlParams=new URLSearchParams(url.split("?")[1]);
 const id=urlParams.get("id");
-async function getDonor() {
+async function getEmploy() {
     const res=await fetch(`http://localhost:3000/api/getemploy/${id}`)
     const employ=await res.json();
     document.getElementById("frm").innerHTML=`
@@ -28,7 +28,7 @@ async function getDonor() {
             </div>
     `
 }
-getDonor()
+getEmploy()
 
 document.getElementById("frm").addEventListener("submit",async(e)=>{
     e.preventDefault();

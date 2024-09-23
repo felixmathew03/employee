@@ -42,7 +42,7 @@ document.getElementById("profile").addEventListener("change",async(e)=>{
     console.log(document.getElementById("profile").files[0]);
     profile=await convertToBase64(document.getElementById("profile").files[0]);
     console.log(profile);
-    document.getElementById("proimg").src=profile
+    // document.getElementById("proimg").src=profile
 })
 function convertToBase64(file) {
     return new Promise((resolve,reject)=>{
