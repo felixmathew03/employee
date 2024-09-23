@@ -97,7 +97,7 @@ input[type="text"]:focus{
 .content{
     width: 21rem;
     height: 34rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.308);
     padding: 1% 2%;
     margin-top: 2%;
     display: flex;
@@ -146,6 +146,14 @@ tr:hover {
 
 td[align="center"] {
     text-align: center;
+}
+input[type="text"]{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 .actions button {

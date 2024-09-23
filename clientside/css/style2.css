@@ -1,6 +1,6 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f7c1c0;
+    background-color: #e8f7d8;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,19 +15,19 @@ body {
     border-radius: 10px;
     padding: 20px;
     margin: 20px auto;
-    border: 2px solid #ff4d4d;
+    border: 2px solid rgb(8, 102, 14);
 }
 h1 {
     text-align: center;
     margin-bottom: 20px;
-    color: #ff4d4d;
+    color: rgb(8, 102, 14);
     font-family: 'Roboto', sans-serif;
 }
 label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #ff4d4d;
+    color: rgb(8, 102, 14);
 }
 input[type="text"],input[type="number"], input[type="email"], input[type="tel"], select {
     width: 100%;
@@ -42,7 +42,7 @@ input[type="text"],input[type="number"], input[type="email"], input[type="tel"],
     justify-content: center;
 }
 .buttons button {
-    background-color: #ff4d4d;
+    background-color: rgb(8, 102, 14);
     color: white;
     padding: 10px 15px;
     border: none;
@@ -52,5 +52,5 @@ input[type="text"],input[type="number"], input[type="email"], input[type="tel"],
     transition: background-color 0.3s ease;
 }
 .buttons button:hover {
-    background-color: #cc0000;
+    background-color: rgb(4, 66, 8);
 }
