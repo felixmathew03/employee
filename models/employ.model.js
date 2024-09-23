@@ -7,6 +7,7 @@ const employSchema=new mongoose.Schema({
     experience:{type:String},
     designation:{type:String},
     phone:{type:Number},
-    email:{type:String}
+    email:{type:String},
+    profile:{type:String}
 });
 export default mongoose.model.Employs||mongoose.model("Employ",employSchema);

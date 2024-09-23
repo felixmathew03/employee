@@ -7,7 +7,7 @@ async function getDonors() {
         str+=`
         <div class="content">
             <div class="img">
-                <img src="./img/isolated-young-handsome-man-different-poses-white-background-illustration_632498-855.avif" alt="">
+                <img src="${employ.profile}" alt="${employ.name}">
             </div>
             <div class="details">
                 <table>
@@ -83,7 +83,7 @@ document.getElementById("filter").addEventListener('keyup',async(e)=>{
             str+=`
             <div class="content">
             <div class="img">
-                <img src="./img/isolated-young-handsome-man-different-poses-white-background-illustration_632498-855.avif" alt="">
+                <img src="${employ.profile}" alt="${employ.name}">
             </div>
             <div class="details">
                 <table>
