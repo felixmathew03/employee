@@ -66,12 +66,12 @@
     border-radius: 4px;
     border: none;
     background-color: #faf8f8;
-    outline: 1px solid rgb(255, 34, 0);
-    color: rgb(255, 34, 0);
+    outline: 1px solid rgb(8, 102, 14);
+    color: rgb(8, 102, 14);
     font-size: 15px;
 }
 .button1 button:hover{
-    background-color: rgb(255, 34, 0);
+    background-color: rgb(8, 102, 14);
     color: whitesmoke;
     transition: 0.4s;
     transform: scale(1.1);
@@ -92,11 +92,14 @@ input[type="text"]:focus{
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    margin-top: 2%;
+    
 }
 .content{
-    width: 23rem;
+    width: 21rem;
     height: 34rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1% 2%;
+    margin-top: 2%;
     display: flex;
     flex-direction: column;
     border-radius: 2%;
@@ -108,7 +111,7 @@ input[type="text"]:focus{
 }
 .img{
     width: 100%;
-    height: 70%;
+    height: 60%;
 }
 .img img{
     width: 100%;
@@ -118,7 +121,7 @@ input[type="text"]:focus{
 }
 .details{
     width: 100%;
-    height: 25%;
+    height: 40%;
 }
 
 .details table {
@@ -144,23 +147,21 @@ tr:hover {
 td[align="center"] {
     text-align: center;
 }
-.actions {
-    width: 15%;
-} 
+
 .actions button {
     margin-right: 5px;
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    background-color: rgb(255, 34, 0);
+    background-color: rgb(8, 102, 14);
     color: white;
     transition: background-color 0.3s ease;
 }
 .actions button:hover {
     background-color: #faf8f8;
-    color: rgb(255, 34, 0);
-    outline: 1px solid rgb(255, 34, 0);
+    color: rgb(8, 102, 14);
+    outline: 1px solid rgb(8, 102, 14);
 }
 /* .container{
     width: 100%;

@@ -24,8 +24,8 @@ async function getDonors() {
                         <th>Experience</th>
                     </tr>
                     <tr>
-                        <td align="center">${employ.salary}</td>
-                        <td align="center">${employ.experience}</td>
+                        <td >${employ.salary}</td>
+                        <td >${employ.experience}</td>
                     </tr>
                     <tr>
                         <th>Designation</th>
@@ -39,10 +39,10 @@ async function getDonors() {
                         <td>${employ.email}</td>
                     </tr>
                     <tr>
-                        <td class="actions" align="left">
+                        <td class="actions" align="right">
                         <a href="./pages/edit.html?id=${employ._id}"><button>Edit</button></a>
                         </td>
-                        <td class="actions" align="right">
+                        <td class="actions" >
                             <button onclick="deleteEmploy('${employ._id}')">Delete</button>
                         </td>
                     </tr>
@@ -81,22 +81,53 @@ document.getElementById("filter").addEventListener('keyup',async(e)=>{
         str=``;
         employees.filter((i)=>i.name.toLowerCase().includes(e.target.value.toLowerCase())).map((employ)=>{
             str+=`
-            <tr>
-                 <td>${employ.empid}</td>
-                <td>${employ.name}</td>
-                <td>${employ.salary}</td>
-                <td>${employ.experience}</td>
-                <td>${employ.designation}</td>
-                <td>${employ.phone}</td>
-                <td>${employ.email}</td>
-                <td class="actions">
-                    <a href="./pages/edit.html?id=${employ._id}"><button>Edit</button></a>
-                    <button onclick="deleteDonor('${employ._id}')">Delete</button>
-                </td>       
-            </tr>
+            <div class="content">
+            <div class="img">
+                <img src="./img/cute-woman-chuckle-holding-breath.jpg" alt="">
+            </div>
+            <div class="details">
+                <table>
+                    <tr>
+                        <th>Emp-ID</th>
+                        <td>${employ.empid}</td>
+                    </tr>
+                    <tr>
+                        <th>Emp-Name</th>
+                        <td>${employ.name}</td>
+                    </tr>
+                    <tr>
+                        <th>Salary</th>
+                        <th>Experience</th>
+                    </tr>
+                    <tr>
+                        <td >${employ.salary}</td>
+                        <td >${employ.experience}</td>
+                    </tr>
+                    <tr>
+                        <th>Designation</th>
+                        <td>${employ.designation}</td>
+                    </tr>
+                    <tr>
+                        <th rowspan="2">Contact</th>
+                        <td>${employ.phone}</td>
+                    </tr>
+                    <tr>
+                        <td>${employ.email}</td>
+                    </tr>
+                    <tr>
+                        <td class="actions" align="right">
+                        <a href="./pages/edit.html?id=${employ._id}"><button>Edit</button></a>
+                        </td>
+                        <td class="actions" >
+                            <button onclick="deleteEmploy('${employ._id}')">Delete</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
             `
         });
-        document.getElementById("tbody").innerHTML=str;
+        document.getElementById("contents").innerHTML=str;
 
         } catch (error) {
             console.log(error);

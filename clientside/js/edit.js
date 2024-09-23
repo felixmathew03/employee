@@ -34,16 +34,15 @@ document.getElementById("frm").addEventListener("submit",async(e)=>{
     e.preventDefault();
     try {
         const name=document.getElementById("name").value;
-    const age=document.getElementById("age").value;
-    const dob=document.getElementById("dob").value;
-    const place=document.getElementById("place").value;
-    const phone=document.getElementById("phone").value;
-    const blood_group=document.getElementById("blood_group").value;
-    console.log(name,age,dob,place,phone,blood_group);
+    const salary=parseInt(document.getElementById("salary").value);
+    const experience=document.getElementById("experience").value;
+    const designation=document.getElementById("designation").value;
+    const phone=parseInt(document.getElementById("phone").value);
+    const email=document.getElementById("email").value;
     const res=await fetch(`http://localhost:3000/api/editemploy/${id}`,{
         method:"PUT",
         headers:{"Content-Type":"application/json"},
-        body:JSON.stringify({name,age,dob,place,phone,blood_group})
+        body:JSON.stringify({name,salary,experience,designation,phone,email})
     })
     if(res.status==201){
         alert("Updated")
