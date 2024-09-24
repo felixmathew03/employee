@@ -5,8 +5,8 @@ async function getDonors() {
     str=``;
     employees.map((employ)=>{
         str+=`
+        <div class="content">
         <a href="./pages/profile.html?id=${employ._id}">
-            <div class="content">
                 <div class="img">
                     <img src="${employ.profile}" alt="${employ.name}">
                 </div>
@@ -14,16 +14,16 @@ async function getDonors() {
                     <table> 
                         <tr>
                             <th>Emp-Name</th>
-                            <th>Designation</th>
+                            <td>${employ.name}</td>
                         </tr>
                         <tr>
-                            <td>${employ.name}</td>
+                            <th>Designation</th>
                             <td>${employ.designation}</td>
                         </tr> 
                     </table>
                 </div>
+                </a>
             </div>
-        </a>
         `
     });
     document.getElementById("contents").innerHTML=str;

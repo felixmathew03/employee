@@ -4,12 +4,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+
     margin: 0;
 }
 .container {
     width: 80%;
     max-width: 500px;
+    max-height: auto;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -53,4 +54,14 @@ input[type="text"],input[type="number"], input[type="email"], input[type="tel"],
 }
 .buttons button:hover {
     background-color: rgb(4, 66, 8);
+}
+.profile{
+    height: 300px;
+    width: 300px;
+    margin: auto;
+}
+.proimg{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
