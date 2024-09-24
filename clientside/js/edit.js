@@ -1,6 +1,7 @@
 const url=window.location.href;
 const urlParams=new URLSearchParams(url.split("?")[1]);
 const id=urlParams.get("id");
+let profile
 async function getEmploy() {
     const res=await fetch(`http://localhost:3000/api/getemploy/${id}`)
     const employ=await res.json();
@@ -22,6 +23,12 @@ async function getEmploy() {
 
             <label for="email">Email</label>
             <input type="email" id="email" name="email" value="${employ.email}">
+            <div class="profile" id="prf">
+                <img src="${employ.profile}" class="proimg" id="proimg" alt="">
+            </div>
+
+            <label for="profile">Profile</label>
+            <input type="file" id="profile" name="profile" required>
             <div class="buttons">
                 <button >Submit</button>
                 <button type="reset">Reset</button>
@@ -42,7 +49,7 @@ document.getElementById("frm").addEventListener("submit",async(e)=>{
     const res=await fetch(`http://localhost:3000/api/editemploy/${id}`,{
         method:"PUT",
         headers:{"Content-Type":"application/json"},
-        body:JSON.stringify({name,salary,experience,designation,phone,email})
+        body:JSON.stringify({name,salary,experience,designation,phone,email,profile})
     })
     if(res.status==201){
         alert("Updated")
@@ -55,3 +62,23 @@ document.getElementById("frm").addEventListener("submit",async(e)=>{
         
     }
 })
+
+document.getElementById("profile").addEventListener("change",async(e)=>{
+    console.log("hdi");
+    console.log(document.getElementById("profile").files[0]);
+    profile=await convertToBase64(document.getElementById("profile").files[0]);
+    console.log(profile);
+    document.getElementById("proimg").src=profile
+})
+function convertToBase64(file) {
+    return new Promise((resolve,reject)=>{
+        const fileReader=new FileReader();
+        fileReader.readAsDataURL(file);
+        fileReader.onload=()=>{
+            resolve(fileReader.result)
+        }
+        fileReader.onerror= (error)=>{
+            reject(error)
+        }
+    })
+}
