@@ -18,7 +18,7 @@ async function getEmploy() {
             <input type="text" id="designation" name="designation" value="${employ.designation}">
 
             <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" value="${employ.phone}">
+            <input type="number" id="phone" name="phone" value="${employ.phone}">
 
             <label for="email">Email</label>
             <input type="email" id="email" name="email" value="${employ.email}">
