@@ -12,7 +12,7 @@ async function getEmploy() {
                 <img src="${employ.profile}" alt="${employ.name}">
             </div>
             <div class="details">
-                <table>
+                <table class="table">
                     <tr>
                         <th>Emp-ID</th>
                         <td>${employ.empid}</td>
@@ -23,11 +23,11 @@ async function getEmploy() {
                     </tr>
                     <tr>
                         <th>Salary</th>
-                        <td >${employ.salary}</td>
+                        <td>${employ.salary}</td>
                     </tr>
                     <tr>
                         <th>Experience</th>
-                        <td >${employ.experience}</td>
+                        <td>${employ.experience}</td>
                     </tr>
                     <tr>
                         <th>Designation</th>
@@ -40,11 +40,9 @@ async function getEmploy() {
                     <tr>
                         <td>${employ.email}</td>
                     </tr>
-                    <tr >
-                        <td class="actions" style="text-align:right">
-                        <a href="./edit.html?id=${employ._id}"><button>Edit</button></a>
-                        </td>
-                        <td class="actions" >
+                    <tr>
+                        <td class="actions" colspan="2" style="text-align:right">
+                            <a href="./edit.html?id=${employ._id}"><button>Edit</button></a>
                             <button onclick="deleteEmploy('${employ._id}')">Delete</button>
                         </td>
                     </tr>

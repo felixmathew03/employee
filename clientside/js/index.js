@@ -11,16 +11,10 @@ async function getDonors() {
                     <img src="${employ.profile}" alt="${employ.name}">
                 </div>
                 <div class="details">
-                    <table> 
-                        <tr>
-                            <th>Emp-Name</th>
-                            <td>${employ.name}</td>
-                        </tr>
-                        <tr>
-                            <th>Designation</th>
-                            <td>${employ.designation}</td>
-                        </tr> 
-                    </table>
+                    <div class="details">
+                        <h2>${employ.name}</h2>
+                        <h3>${employ.designation}</h3>
+                    </div>
                 </div>
                 </a>
             </div>
