@@ -5,11 +5,11 @@ body, h1, h2, h3, ul {
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #e8f5e9; /* Light background for contrast */
+    background-color: #e8eef5; /* Light background for contrast */
 }
 
 .navbar {
-    background: linear-gradient(90deg, #4CAF50, #2E7D32); /* Green gradient */
+    background: linear-gradient(135deg, #002b5c, #0056a6);
     color: white;
     display: flex;
     justify-content: space-between;
@@ -55,7 +55,7 @@ body {
 
 .button1 button {
     background-color: white;
-    color: #4CAF50;
+    color: #4c7aaf;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
