@@ -1,4 +1,8 @@
-import employSchema from './models/employ.model.js'
+import employSchema from './models/employ.model.js';
+import bcrypt from "bcrypt";
+import userSchema from "./models/user.model.js";
+
+
 export async function countEmployees(req,res) {
     try {
         const count=await employSchema.countDocuments({});
@@ -59,11 +63,32 @@ export async function editEmploy(req,res) {
 }
 export async function deleteEmploy(req,res) {
     try {
-        const {_id}=req.params;
-        console.log(_id);
-        const data=await employSchema.deleteOne({_id});
-        res.status(201).send(data);
+    res.status(201).send(data);
     } catch (error) {
         res.status(404).send(error)
     }   
+}
+
+export async function signUp(req,res) {
+    try {
+        const {email,username,password,cpassword}=req.body;
+        console.log(email,username,password,cpassword);
+        if(!(email&&username&&password&&cpassword))
+            return res.status(404).send({msg:"fields are empty"});
+        if(password!==cpassword)
+            return res.status(404).send({msg:"password not matched"})
+        bcrypt.hash(password,10).then((hashedPassword)=>{
+            console.log(hashedPassword);
+            userSchema.create({email,username,password:hashedPassword}).then(()=>{
+                return res.status(201).send({msg:"success"});
+            }).catch((error)=>{
+                return res.status(404).send({msg:"Not registered"})
+            })
+        }).catch((error)=>{
+            return res.status(404).send({msg:error}); 
+        })
+
+    } catch (error) {
+        return res.status(404).send({msg:error});
+    }
 }
