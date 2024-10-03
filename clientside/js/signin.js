@@ -11,7 +11,7 @@ document.getElementById("frm").addEventListener("submit",async(e)=>{
         console.log(res);
         if(res.status==200){
             const result=await res.json();
-            localStorage.setItem(result.token,result.token);
+            localStorage.setItem("Auth",result.token);
             console.log(result);
             alert("success");
             window.location.href="../index.html"
