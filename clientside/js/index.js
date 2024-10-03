@@ -22,7 +22,7 @@ async function getEmployees() {
             `
         });
         document.getElementById("contents").innerHTML=str;
-    }else if(res.status(403)){
+    }else if(res.status==403){
         window.location.href="../pages/signin.html"
     }
     else{
