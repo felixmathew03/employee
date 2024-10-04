@@ -1,10 +1,12 @@
+const value=localStorage.getItem("Auth");
+console.log(value);
 async function getEmployees() {
-    const res=await fetch("http://localhost:3000/api/getemployees");
-    if (res.status==200) {
-        const employees=await res.json();
-        console.log(employees);
+    const res=await fetch("http://localhost:3000/api/getemployees",{headers:{"Authorization":`Bearer ${value}`}});
+    const employees=await res.json();
+    if (res.status==200){
+        document.getElementById("user").innerText=employees.username;
         str=``;
-        employees.map((employ)=>{
+        employees.employees.map((employ)=>{
             str+=`
             <div class="content">
             <a href="./pages/profile.html?id=${employ._id}">
@@ -22,11 +24,10 @@ async function getEmployees() {
             `
         });
         document.getElementById("contents").innerHTML=str;
-    }else if(res.status==403){
-        window.location.href="../pages/signin.html"
     }
     else{
-        alert("error")
+        alert(employees.msg)
+        window.location.href="../pages/signin.html"
     }
     
 }
@@ -70,3 +71,7 @@ document.getElementById("filter").addEventListener('keyup',async(e)=>{
             console.log(error);
         }
 })
+function logout() {
+    localStorage.removeItem("Auth");
+    window.location.href="../pages/signin.html"
+}

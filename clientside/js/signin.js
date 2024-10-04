@@ -9,15 +9,14 @@ document.getElementById("frm").addEventListener("submit",async(e)=>{
         body:JSON.stringify({email,password})
     }).then(async (res)=>{
         console.log(res);
+        const result=await res.json();
         if(res.status==200){
-            const result=await res.json();
             localStorage.setItem("Auth",result.token);
             console.log(result);
-            alert("success");
+            alert(result.msg);
             window.location.href="../index.html"
         }else if(res.status==404){
-            const data=await res.json()
-            alert(data.msg)
+            alert(result.msg)
         }
         else{
             alert("error")

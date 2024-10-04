@@ -111,7 +111,7 @@ export async function signIn(req,res) {
     if(user===null)
         return res.status(404).send({msg:"invalid email"})
 
-    //convert to hass and compare using bcrypt
+    //convert to hash and compare using bcrypt
     const success=await bcrypt.compare(password,user.password);
     console.log(success);
     if(success!==true)
