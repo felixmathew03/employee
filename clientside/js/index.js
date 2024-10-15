@@ -26,7 +26,6 @@ async function getEmployees() {
         document.getElementById("contents").innerHTML=str;
     }
     else{
-        alert(employees.msg)
         window.location.href="../pages/signin.html"
     }
     
