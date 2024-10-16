@@ -139,15 +139,15 @@ export async function forgetPassword(req,res) {
     console.log(update);
     
      // send mail with defined transport object
-    // const info = await transporter.sendMail({
-    //     from: '"Maddison Foo Koch 👻" <maddison53@ethereal.email>', // sender address
-    //     to: "bar@example.com, baz@example.com", // list of receivers
-    //     subject: "OTP", // Subject line
-    //     text: "your otp", // plain text body
-    //     html: `<h1>${otp}</h1>`, // html body
-    // });
+    const info = await transporter.sendMail({
+        from: '"Maddison Foo Koch 👻" <maddison53@ethereal.email>', // sender address
+        to: "bar@example.com, baz@example.com", // list of receivers
+        subject: "OTP", // Subject line
+        text: "your otp", // plain text body
+        html: `<h1>${otp}</h1>`, // html body
+    });
 
-    // console.log("Message sent: %s", info.messageId);
+    console.log("Message sent: %s", info.messageId);
     // Message sent: <d786aa62-4e0a-070a-47ed-0b0666549519@ethereal.email>
     console.log(otp);
     return res.status(201).send({email});
