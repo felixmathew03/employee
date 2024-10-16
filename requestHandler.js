@@ -61,7 +61,6 @@ export async function getEmploy(req,res) {
         console.log(req.params);
         const {id}=req.params
         const data=await employSchema.findOne({_id:id});
-        console.log(data);
         res.status(200).send(data);
     } catch (error) {
         res.status(404).send(error)
@@ -150,6 +149,7 @@ export async function forgetPassword(req,res) {
 
     // console.log("Message sent: %s", info.messageId);
     // Message sent: <d786aa62-4e0a-070a-47ed-0b0666549519@ethereal.email>
+    console.log(otp);
     return res.status(201).send({email});
 }
 
