@@ -79,7 +79,9 @@ export async function editEmploy(req,res) {
 }
 export async function deleteEmploy(req,res) {
     try {
-    res.status(201).send(data);
+         const {_id}=req.params;
+        const data=await userSchema.deleteOne({_id})
+        res.status(201).send(data);
     } catch (error) {
         res.status(404).send(error)
     }   
