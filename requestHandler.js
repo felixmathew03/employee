@@ -5,12 +5,10 @@ import pkg from "jsonwebtoken";
 import nodemailer from "nodemailer";
 const {sign}=pkg;
 const transporter = nodemailer.createTransport({
-    host: "sandbox.smtp.mailtrap.io",
-    port: 2525,
-    secure: false, // true for port 465, false for other ports
+   service:"gmail",
     auth: {
-      user: "1faec768913b11",
-      pass: "c2dc2c8c40afba",
+      user: "ffg@gmail.com",
+      pass: "qorw ixrc uyit crxn",
     },
   });
 
@@ -142,8 +140,8 @@ export async function forgetPassword(req,res) {
     
      // send mail with defined transport object
     const info = await transporter.sendMail({
-        from: '"Maddison Foo Koch 👻" <maddison53@ethereal.email>', // sender address
-        to: "bar@example.com, baz@example.com", // list of receivers
+        from: '"Wetr 👻" <fbv@gmail.com>', // sender address
+        to: "tyt@gmail.com", // list of receivers
         subject: "OTP", // Subject line
         text: "your otp", // plain text body
         html: `<h1>${otp}</h1>`, // html body

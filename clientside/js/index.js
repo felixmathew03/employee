@@ -1,5 +1,4 @@
 const value=localStorage.getItem("Auth");
-console.log(value);
 async function getEmployees() {
     const res=await fetch("http://localhost:3000/api/getemployees",{headers:{"Authorization":`Bearer ${value}`}});
     const employees=await res.json();
